@@ -1,5 +1,5 @@
 cron "mirror our pkgsrc upstream" do
-  command "rsync -avzP --partial --progress #{node['pkgsrc']['upstream_url']} #{node['pkgsrc']['local_mirror']}"
+  command "rsync -avzP --delete --partial --progress #{node['pkgsrc']['upstream_url']} #{node['pkgsrc']['local_mirror']}"
   hour 3
 end
 
