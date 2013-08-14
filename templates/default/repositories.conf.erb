@@ -1,1 +1,3 @@
-http://<%= node['pkgsrc']['repo_host'] %>/<%= node['pkgsrc']['repo_path'] %>/`head -n1 < /etc/release | awk '{print $1}'`/2013Q1/`head -n1 < /etc/release | awk '{print $2}'`/All
+<%- node['pkgsrc']['repo_hosts'].each do | host | %>
+<%= host %>/<%= node['pkgsrc']['repo_path'] %>/<%= node['pkgsrc']['platform'] %>/<%= node['pkgsrc']['release'] %>/<%= node['pkgsrc']['architecture'] %>/All
+<% end %>
