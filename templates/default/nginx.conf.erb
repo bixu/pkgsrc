@@ -42,7 +42,7 @@ http {
 
         location / {
             autoindex on;
-            root   share/examples/nginx/html/pkgsrc-joyent;
+            root   <%= node['pkgsrc']['local_mirror'] %>;
             index  index.html index.htm;
         }
 
