@@ -5,6 +5,6 @@ template "/opt/local/etc/pkgin/repositories.conf" do
 end
 
 execute "update pkgsrc database" do
-  command "pkgin -y list"
+  command "pkgin -f update"
   action :nothing
 end
