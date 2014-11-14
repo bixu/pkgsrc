@@ -6,3 +6,5 @@ default['pkgsrc']['local_mirror'] = "/opt/local/share/examples/nginx/html/pkgsrc
 default['pkgsrc']['platform'] = `head -n1 < /etc/release | awk '{print $1}'`.strip
 default['pkgsrc']['release'] = `grep release /etc/pkgsrc_version | awk '{print $2}'`.strip
 default['pkgsrc']['architecture'] = `grep architecture /etc/pkgsrc_version | awk '{print $2}'`.strip
+
+default['pkgsrc']['security_updates_interval'] = 7 # interval to attempt security updates, in days
