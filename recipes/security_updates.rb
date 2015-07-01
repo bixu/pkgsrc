@@ -1,4 +1,5 @@
 execute "update vulnerability list" do
+  ignore_failure true
   # update only if the remote vulns bundle has been updated (-u)
   command "pkgin -y -f update && pkg_admin fetch-pkg-vulnerabilities -u"
   not_if "find /var/db/pkgin/pkg_admin_audit_done -mtime -#{node['pkgsrc']['security_updates_interval']} | grep pkg_admin_audit_done"
