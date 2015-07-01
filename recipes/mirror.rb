@@ -5,6 +5,13 @@ end
 
 package "nginx"
 
+directory node['pkgsrc']['local_mirror'] do
+  owner "root"
+  group "root"
+  mode 00755
+  action :create
+end
+
 template "/opt/local/etc/nginx/nginx.conf" do
   source "nginx.conf.erb"
   mode 0644
